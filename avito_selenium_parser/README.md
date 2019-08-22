@@ -1,0 +1,1 @@
+Парсер сайта avito.ru, использует selenium, bs4, pytesseract.
