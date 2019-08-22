@@ -1,7 +1,7 @@
 from urllib.parse import urlencode
 import requests
 import time
-from progress import print_progress_bar
+from .progress import print_progress_bar
 import json
 
 API_TOKEN = '80871ec2fb82582b75b22f16018e5400371a2380a0369a679e5e9a528f78114839d85b5e1bc89af791549'
@@ -25,6 +25,7 @@ def check_token(token):
         'v': VERSION,
         'user_id': USER_ID
     }
+
     response = requests.get(f'https://api.vk.com/method/users.get?', urlencode(access_data))
     user_info = response.json()
     try:
@@ -170,5 +171,5 @@ if __name__ == '__main__':
             json.dump(game.result_json, outfile)
         print(f'Анализ завершен, данные сохранены в {file_name}')
     else:
-        print('\nЗамените токен, срок использования истек.\n')
+        print('\nЗамените токен, срок использования истек!\n')
         print(AUTH_URL + urlencode(AUTH_DATA))
