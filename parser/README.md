@@ -1,0 +1,1 @@
+Простой парсер сайта spb.spravker.ru, сделан с помощью BeautifulSoup.
